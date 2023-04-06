@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ESGmodel
+
+<div class="min-vh-50 pt-5" style="background-color:#222324">
+    <h1>留白處</h1>
+</div>
+
+<div class="container pt-5 min-vh-100" style="background-color:#0f1e2b">
+    <div class="p-4 border border-5">
+        <div class="row">
+            <div class="col-3 list-group vh-100">
+                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                The current link item
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
+            </div>
+            <div class="col-9">                
+                <h1>@Model.CompanyNumber</h1>
+                <h1>@Model.CompanyName</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>SusEsg</th>
+                            <th>MsciEsg</th>
+                            <th>FtseEsg</th>
+                            <th>IssESG</th>
+                            <th>SapEsg</th>
+                            <th>TwCompanyRank</th>
+                            <th>Refi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Model.SusESG</td>
+                            <td>@Model.MsciESG</td>
+                            <td>@Model.FtseESG</td>
+                            <td>@Model.IssESG</td>
+                            <td>@Model.SapESG</td>
+                            <td>@Model.TwCompanyRank</td>
+                            <td>@Model.Refi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+

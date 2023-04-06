@@ -1,0 +1,34 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" >
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet" >
+
+.background{
+    background-size: cover;
+    min-height:100vh;
+}
+
+
+.tableFont {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+html {
+  font-size: 14px;
+
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}

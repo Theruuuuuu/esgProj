@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .h1{
+        font-size:100px;
+    }
+</style>
+<div class="backgroundImg" style="background-image:url('../img/background.jpg')">
+    <div class="color-overlay d-flex justify-content-center align-items-start">
+        <div class="container pt-5">
+            <div class="row">
+            <h1 class="pt-5">搜尋</h1>
+            <div class="col-12">
+                <input id="search" class="form-control" placeholder="123" />
+            </div>
+            <div class="overflow-scroll" style="max-height:50vh; background-color:#1d1e1f">         
+                <div id="searchRes"></div>
+            </div>
+        </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+        // 當 Select 的值改變時，載入對應的部分視圖內容
+            $("#search").keyup(function () {
+                var search = $("#search").val();
+                $.ajax({
+                    type: 'GET',
+                    url: "/Home/searchItem?search=" + search, // 請自行替換成你的部分視圖控制器的路徑
+                    success: function (result) {
+                        console.log(search);
+                        $('#searchRes').html(result);
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                        console.log('???');
+                    }
+                });
+            });
+        });
+
+    </script>
+}
