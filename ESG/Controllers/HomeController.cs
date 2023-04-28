@@ -23,12 +23,10 @@ namespace ESG.Controllers
 
         public IActionResult searchItem(string? search) {
             var data = _dbcontext.GetAll();
-            if (!string.IsNullOrEmpty(search))
-            {
-                data = data.Where(u => u.CompanyNumber.Contains(search) || u.CompanyName.Contains(search));
-                return PartialView("_searchPartial", data);
-            }            
-            return PartialView("_searchNotFoundPartial");
+            var searchRes = data.Where(u => u.CompanyNumber.Contains(search) || u.CompanyName.Contains(search));
+            if (searchRes !=null || searchRes.Any())
+                return PartialView("_searchPartial", searchRes);
+            return View();
         }
                 
 

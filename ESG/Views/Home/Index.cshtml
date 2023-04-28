@@ -10,18 +10,18 @@
     <div class="color-overlay d-flex justify-content-center align-items-start">
         <div class="container pt-5">
             <div class="row">
-            <h1 class="pt-5">搜尋</h1>
-            <div class="col-12">
-                <input id="search" class="form-control" placeholder="123" />
+                <h1 class="pt-5">搜尋</h1>
+                <div class="col-12">
+                    <input id="search" class="form-control" placeholder="123" />
+                </div>
+                <div class="col-12">
+                    <div class="list-group" id="show-list">
+                        @*查詢結果*@
+                    </div>
+                </div>
+            
             </div>
-            <div class="overflow-scroll" style="max-height:50vh; background-color:#1d1e1f">         
-                <div id="searchRes"></div>
-            </div>
-        </div>
-        </div>
-        
-        
-        
+        </div>  
     </div>
 </div>
 
@@ -33,18 +33,19 @@
         // 當 Select 的值改變時，載入對應的部分視圖內容
             $("#search").keyup(function () {
                 var search = $("#search").val();
-                $.ajax({
-                    type: 'GET',
-                    url: "/Home/searchItem?search=" + search, // 請自行替換成你的部分視圖控制器的路徑
-                    success: function (result) {
-                        console.log(search);
-                        $('#searchRes').html(result);
-                    },
-                    error: function (xhr) {
-                        console.log(xhr.responseText);
-                        console.log('???');
-                    }
-                });
+                if(search!=''){
+                    $.ajax({
+                        type: 'Post',
+                        url: "/Home/searchItem?search=" + search, // 請自行替換成你的部分視圖控制器的路徑
+                        success: function (result) {
+                            console.log(search);
+                            $('#show-list').html(result);
+                        }
+                    });
+                }
+                else{
+                    $('#show-list').html('');
+                }
             });
         });
 
